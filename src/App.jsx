@@ -7,9 +7,10 @@ import GeneratePage from "./pages/GeneratePage";
 
 export default function App() {
   const token = localStorage.getItem("token");
+  const basename = import.meta.env.DEV ? '/' : '/iawriter-frontend/';
 
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-gray-200">
         <Navbar />
 
