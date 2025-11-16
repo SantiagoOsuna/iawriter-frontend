@@ -1,8 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=./index.html" />
+    <meta charset="utf-8" />
+    <title>IAwrite - Redirect</title>
+    <script>
+      // Redirigir todas las rutas 404 a index.html
+      // de forma que React Router pueda manejar las rutas correctamente
+      const segmentCount = 0;
+      const l = window.location;
+      
+      // No redirigir archivos estáticos
+      if (l.pathname.match('^([^?]*/)?.+\\.[a-z]+$')) {
+        return;
+      }
+
+      if (!l.pathname.includes('/iawriter-frontend/')) {
+        // Si no está en la ruta base, redirigir a ella
+        l.replace(l.pathname.replace(/^\//, '/iawriter-frontend/'));
+      } else {
+        // Si ya está en la ruta base, ir a index.html
+        l.replace(l.protocol + '//' + l.host + '/iawriter-frontend/index.html');
+      }
+    </script>
   </head>
   <body>
+    <p>Cargando...</p>
   </body>
 </html>
