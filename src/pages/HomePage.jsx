@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   const [posts, setPosts] = useState([]);
@@ -25,12 +26,12 @@ export default function HomePage() {
           Solo ingresa un prompt y deja que la IA haga el resto.
         </p>
 
-        <a
-          href="/generate"
-          className="inline-block mt-8 px-8 py-3 text-lg bg-purple-600 hover:bg-purple-700 text-white rounded-xl shadow-lg transition"
-        >
-          Crear artículo ahora
-        </a>
+      <Link
+        to="/generate"
+        className="inline-block mt-8 px-8 py-3 text-lg bg-purple-600 hover:bg-purple-700 text-white rounded-xl shadow-lg transition"
+      >
+        Crear artículo ahora
+      </Link>
       </section>
 
       {/* FEED */}
